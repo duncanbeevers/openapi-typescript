@@ -1,5 +1,6 @@
 import type { GlobalContext, OpenAPI2, OpenAPI3, SchemaObject, SwaggerToTSOptions } from "./types.js";
 import path from "path";
+import fs from "fs";
 import prettier from "prettier";
 import parserTypescript from "prettier/parser-typescript.js";
 import { Readable } from "stream";
@@ -42,6 +43,7 @@ async function openapiTS(
     defaultNonNullable: options.defaultNonNullable || false,
     formatter: options && typeof options.formatter === "function" ? options.formatter : undefined,
     immutableTypes: options.immutableTypes || false,
+    contentNever: options.contentNever || false,
     makePathsEnum: options.makePathsEnum || false,
     pathParamsAsTypes: options.pathParamsAsTypes,
     rawSchema: options.rawSchema || false,
@@ -115,7 +117,9 @@ async function openapiTS(
   };
   if (options && options.prettierConfig) {
     try {
-      const userOptions = await prettier.resolveConfig(path.resolve(process.cwd(), options.prettierConfig));
+      const prettierConfigFile = path.resolve(process.cwd(), options.prettierConfig);
+      await fs.promises.access(prettierConfigFile, fs.constants.F_OK);
+      const userOptions = await prettier.resolveConfig(prettierConfigFile);
       prettierOptions = {
         ...(userOptions || {}),
         ...prettierOptions,

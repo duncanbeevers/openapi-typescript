@@ -79,6 +79,7 @@ export interface components {
        * @enum {string}
        */
       status?: "placed" | "approved" | "delivered";
+      /** @default false */
       complete?: boolean;
     };
     Category: {
@@ -488,7 +489,7 @@ export interface operations {
 
 export interface external {}
 
-enum ApiPaths {
+export enum ApiPaths {
   updatePet = "/pet",
   addPet = "/pet",
   findPetsByStatus = "/pet/findByStatus",

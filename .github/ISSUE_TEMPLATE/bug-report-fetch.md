@@ -20,4 +20,4 @@ _(in case it’s not obvious)_
 
 **Checklist**
 
-- [ ] I’m willing to open a PR (see [CONTRIBUTING.md](https://github.com/drwpow/openapi-fetch/blob/main/CONTRIBUTING.md))
+- [ ] I’m willing to open a PR (see [CONTRIBUTING.md](https://github.com/drwpow/openapi-fetch/tree/main#-contributing))

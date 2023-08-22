@@ -58,7 +58,7 @@ To add a schema as a snapshot test, modify the [/scripts/download-schemas.ts](/s
 
 ### Generating types
 
-It may be surprising to hear, but _generating TypeScript types from OpenAPI is opinionated!_ Even though TypeScript and OpenAPI are very close relatives, both being JavaScript/JSON-based, they are nonetheless 2 different languages and thus there is always some room for interpretation. Likewise, some parts of the OpenAPI specification can be ambiguous on how they’re used, and what the expected type outcomes may be (though this is generally for more advanced usecasees, such as specific implementations of `anyOf` as well as [discriminator](https://spec.openapis.org/oas/latest.html#discriminatorObject) and complex polymorphism).
+It may be surprising to hear, but _generating TypeScript types from OpenAPI is opinionated!_ Even though TypeScript and OpenAPI are very close relatives, both being JavaScript/JSON-based, they are nonetheless 2 different languages and thus there is always some room for interpretation. Likewise, some parts of the OpenAPI specification can be ambiguous on how they’re used, and what the expected type outcomes may be (though this is generally for more advanced use-cases, such as specific implementations of `anyOf` as well as [discriminator](https://spec.openapis.org/oas/latest.html#discriminatorObject) and complex polymorphism).
 
 All that said, this library should strive to generate _the most predictable_ TypeScript output for a given schema. And to achieve that, it always helps to open an [issue](https://github.com/drwpow/openapi-typescript/issues) or [discussion](https://github.com/drwpow/openapi-typescript/discussions) to gather feedback.
 
